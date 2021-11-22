@@ -7,6 +7,7 @@ import { BOOKING } from '../../redux/types/BookingType';
 import Button from '../../component/button/Button'
 import './CheckOut.scss'
 import { BookingDetail } from '../../model/BookingDetail';
+import { USER_LOGIN } from '../../util/config';
 
 export default function CheckOut() {
 
@@ -16,8 +17,12 @@ export default function CheckOut() {
     const { id } = useParams();
     const dispatch = useDispatch();
     const navigate = useNavigate()
-    console.log(detailBooking)
-    console.log(choosingSeat)
+    const check=()=>{
+        if (!localStorage.getItem(USER_LOGIN)) {
+            return navigate('/signin')
+        }
+        console.log((!localStorage.getItem(USER_LOGIN)))
+    }
     const renderGhe = () => {
         return detailBooking.danhSachGhe?.map((ghe, index) => {
             let gheVip = ghe.loaiGhe === "Vip" ? 'vip' : '';
@@ -38,7 +43,6 @@ export default function CheckOut() {
                     })
                 }} disabled={ghe.daDat} className={`ghe shadow-inner  ${gheDaDat} ${gheDangDat}  ${gheVip} `} key={index}>
 
-                    {/* {(ghe.daDat) ? <UserOutlined /> : ghe.stt} */}
                     {ghe.stt}
 
                 </button>
@@ -53,6 +57,7 @@ export default function CheckOut() {
         const action = getDetailBookingAction(id)
 
         dispatch(action)
+        check()
     }, [])
     return (
         <div className="checkout" style={{ backgroundImage: `url(${thongTinPhim?.hinhAnh})` }}>
