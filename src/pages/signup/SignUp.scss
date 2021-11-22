@@ -1,0 +1,39 @@
+@use '../../scss' as *;
+
+.signup{
+    background-image: url('../../assets/footer/footer-bg.jpg');
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    &__content{
+        &__items{
+            background-color: #0000009a;
+            padding: 2rem 3rem ;
+            border-radius: 4px;
+        }
+      h3{
+          font-size: 2.5rem;
+          margin-bottom: 1.5rem;
+      }
+      form{
+          label{
+            font-size: 1.5rem;
+          }
+          input{
+              padding: 1rem 5rem;
+              background-color:#333 ;
+              border: 0;
+              border-radius: 4px;
+              color: $txt-color;
+          }
+      }
+      &__item{
+          margin: 1.5rem 0;
+          p{
+              color: $main-color;
+          }
+      }
+    }
+}

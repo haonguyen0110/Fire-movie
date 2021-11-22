@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+
+import Homepage from './pages/homepage/Homepage';
+import DetailMovie from './pages/detail/DetailMovie';
+import SignIn from './pages/signin/SignIn';
+import SignUp from './pages/signup/SignUp';
+import CheckOut from './pages/checkout/CheckOut';
+import Profile from './pages/profile/Profile'
+import EditProfile from './pages/editProfile/EditProfile';
+import Movie from './pages/movie/Movie';
+export const history = createBrowserHistory()
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router history={history}>
+      <Routes>
+        <Route path="/" exact element={<Homepage/>}  />
+        <Route path="/movie/:id" element={<DetailMovie/>} />
+        <Route path="/movie" element={<Movie/>} />
+        <Route path="/checkout/:id" element={<CheckOut/>} />
+        <Route path="/signin" element={<SignIn/>} />
+        <Route path="/signup" element={<SignUp/>} />
+        <Route path="/profile" element ={<Profile/>} />
+        <Route path="/profile/edit" element ={<EditProfile/>} />
+      </Routes>
+
+
+
+    </Router>
+  )
 }
 
 export default App;

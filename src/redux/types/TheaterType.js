@@ -1,0 +1,2 @@
+
+export const SET_MOVIE_DETAIL ='SET_MOVIE_DETAIL'

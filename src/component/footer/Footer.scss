@@ -1,0 +1,32 @@
+@use "../../scss/" as *;
+
+.footer {
+    position: relative;
+    padding: 3rem 2rem;
+    background-image: url('../../assets/footer/footer-bg.jpg')!important;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+   &__content__logo{
+       a{
+           margin-left: 0;
+       }
+   }
+   &__content__menus{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+   }
+   &__content__menu{
+     
+      p{
+          margin: 0.75rem 2rem;
+          font-size: 1.2rem;
+          font-weight: 500;
+          @include tablet{
+              font-size: 1rem;
+          }
+      }
+   }
+}

@@ -1,0 +1,41 @@
+@use '../../scss/' as *;
+
+
+.profile{
+    display: flex;
+    justify-content: center;
+
+  
+    &__content{
+        border-bottom: 1px solid white;
+        padding: 2rem;
+        width: 100%;
+        margin: 0 auto;
+        &__history{
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgb(65, 63, 63) ;
+            h5{
+                font-size: 1.2rem;
+                color: $main-color;
+            }
+            img{
+                margin-right: 2rem;
+            }
+        }
+        h1{
+            margin-bottom: 1.5rem;
+        }
+        table{
+            width: 100%;
+            a{
+                margin: 0 1rem;
+            }
+        }
+        &__btn{
+           
+        }
+    }
+}

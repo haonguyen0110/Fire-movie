@@ -1,0 +1,59 @@
+@use '../../scss/' as *;
+
+.checkout{
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.692);
+    padding:2rem 0 ;
+   h1{
+       text-align: center;
+       margin: 1rem 0;
+   }
+
+}
+.ghe{
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px;
+    color: $main-color;
+    font-weight: 900;
+}
+
+
+.gheDaDat{
+
+  
+}
+
+.gheDangDat{
+  background-color: $main-color!important;
+   color: $txt-color;
+}
+
+.vip{
+    
+    background-color: rgb(255, 153, 0);
+    color: $txt-color;
+    
+}
+
+.result{
+    table{
+
+        border: 1px solid white;
+        padding: 1rem 2rem;
+        span{
+            color: $main-color;
+            margin: 0 0.2rem;
+            font-weight: 500;
+        }
+    }
+    &__content{
+        display: flex;
+        justify-content: center;
+
+    }
+}
